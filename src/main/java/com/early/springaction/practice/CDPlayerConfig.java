@@ -3,6 +3,7 @@ package com.early.springaction.practice;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 //@ComponentScan
@@ -13,13 +14,32 @@ public class CDPlayerConfig {
      *
      */
     @Bean
+    @Profile("dev")
     public CompactDist sgtPeppers(){
         return new SgtPappers();
     }
 
     @Bean
+    @Profile("test")
     public CompactDist cd(){
         return new CD();
     }
+
+
+    @Bean
+    public CDPlayer cdPlayer(CompactDist sgtPeppers){
+        return new CDPlayer(sgtPeppers);
+    }
+    @Bean
+    public CDPlayer cdPlayer3(CompactDist cd){
+        return new CDPlayer(cd);
+    }
+    @Bean // 自动将sgtPeppers 的bean注入
+    public CDPlayer cdPlayer2(){
+        return new CDPlayer(sgtPeppers());
+    }
+
+
+
 
 }
