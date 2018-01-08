@@ -1,8 +1,9 @@
 package com.early.springaction.test;
 
 import com.early.springaction.practice.CDPlayer;
-import com.early.springaction.practice.CDPlayerConfig;
-import com.early.springaction.practice.CompactDist;
+import com.early.springaction.configclasses.CDPlayerConfig;
+import com.early.springaction.interfaces.CompactDist;
+import com.early.springaction.practice.MagicBean;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,6 +31,7 @@ public class CDPlayerTest {
     @Autowired
     private CDPlayer cdPlayer3;
 
+
     @Test
     public void cdShouldNotBeNull(){
         Assert.assertNotNull(cd);
@@ -47,5 +49,16 @@ public class CDPlayerTest {
     @Test
     public void cdPlayerRun3(){
         cdPlayer3.run();
+    }
+
+    @Autowired(required = false)
+    private MagicBean magicBean;
+    @Test
+    public void testConditoanal(){
+        if(magicBean == null){
+            System.out.println("这个类没有实例化");
+        }else{
+            magicBean.testPrint();
+        }
     }
 }

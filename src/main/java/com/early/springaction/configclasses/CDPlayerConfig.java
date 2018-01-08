@@ -1,9 +1,8 @@
-package com.early.springaction.practice;
+package com.early.springaction.configclasses;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import com.early.springaction.interfaces.CompactDist;
+import com.early.springaction.practice.*;
+import org.springframework.context.annotation.*;
 
 @Configuration
 //@ComponentScan
@@ -39,6 +38,17 @@ public class CDPlayerConfig {
         return new CDPlayer(sgtPeppers());
     }
 
+
+    /**
+     * 这条件必须是实现了org.springframework.context.annotation.Condition这个接口的类
+     * @Profile 这个注解实际上在底层用的就有这个@Conditional注解
+     * @return
+     */
+    @Bean
+    @Conditional(MagicExistsCondition.class)
+    public MagicBean magicBean(){
+        return new MagicBean();
+    }
 
 
 

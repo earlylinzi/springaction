@@ -1,4 +1,4 @@
-package com.early.springaction.practice;
+package com.early.springaction.interfaces;
 
 /**
  * 定义一个CD的接口
