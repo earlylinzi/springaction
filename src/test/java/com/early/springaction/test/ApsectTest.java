@@ -1,8 +1,6 @@
 package com.early.springaction.test;
 
-import com.early.springaction.aspectclasses.SingPerformence;
 import com.early.springaction.configclasses.ApsectConfig;
-import com.early.springaction.configclasses.ExpressiveConfig;
 import com.early.springaction.interfaces.Performence;
 import org.junit.Test;
 import org.junit.runner.RunWith;

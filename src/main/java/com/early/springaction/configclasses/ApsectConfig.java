@@ -2,6 +2,7 @@ package com.early.springaction.configclasses;
 
 import com.early.springaction.aspectclasses.Audience;
 import com.early.springaction.aspectclasses.SingPerformence;
+import com.early.springaction.interfaces.Performence;
 import org.springframework.context.annotation.*;
 
 /**
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.*;
 public class ApsectConfig {
 
     @Bean
-    public SingPerformence singPerformence(){
+    public Performence singPerformence(){
         return new SingPerformence();
     }
 

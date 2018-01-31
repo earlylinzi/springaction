@@ -13,13 +13,13 @@ public class CDPlayerConfig {
      *
      */
     @Bean
-    @Profile("dev")
+//    @Profile("dev")
     public CompactDist sgtPeppers(){
         return new SgtPappers();
     }
 
     @Bean
-    @Profile("test")
+//    @Profile("test")
     public CompactDist cd(){
         return new CD();
     }

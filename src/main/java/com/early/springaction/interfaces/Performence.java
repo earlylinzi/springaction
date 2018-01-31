@@ -5,6 +5,6 @@ package com.early.springaction.interfaces;
  */
 public interface Performence {
 
-    public void perform();
+    void perform();
 }
 
